@@ -572,6 +572,8 @@ function get_data(event, options, nodes, global) {
 				);
 
 			return `${global}.defer(${id})`;
+		} else if (thing?._sveltekit_hide_from_client) {
+			return 'undefined';
 		}
 	}
 
